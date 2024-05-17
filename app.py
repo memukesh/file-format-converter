@@ -42,8 +42,13 @@ def process_files(ds_names=None):
     if not ds_names:
         ds_names = schemas.keys()
     for ds_name in ds_names:
-        print(f'Processing {ds_name}')
-        file_converter(src_base_dir, tgt_base_dir, ds_name)        
+        try:
+            print(f'Processing {ds_name}')
+            file_converter(src_base_dir, tgt_base_dir, ds_name)        
+        except NameError as ne:
+            print(ne)
+            print(f'file not found {ds_name}')
+            pass
 
 
 if __name__ =='__main__':
