@@ -52,5 +52,6 @@ def process_files(ds_names=None):
 
 
 if __name__ =='__main__':
+    #print(os.environ.get('DB_HOST'))
     process_files()
 
